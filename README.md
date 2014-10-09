@@ -28,7 +28,7 @@ currdir=$(cd "$currdir" && pwd)
 export PATH=$currdir/install/bin/:$PATH
 export LD_LIBRARY_PATH=$currdir/install/lib/:$LD_LIBRARY_PATH
 export DYLD_LIBRARY_PATH=$currdir/install/lib/:$DYLD_LIBRARY_PATH
-$currdir/install/bin/luajit myscripts/main.lua $*
+$currdir/install/bin/luajit myscripts/main.out $*
 ```
 
 5) Zip it and ship it, ask your thirdparty to unzip and start the program with "run.sh"
