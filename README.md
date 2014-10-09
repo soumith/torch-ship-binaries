@@ -7,7 +7,7 @@ A page describing how to ship torch binaries without sharing the source code of 
 ```bash
 git clone https://github.com/soumith/torch-distro.git
 cd torch-distro
-install.sh
+./install.sh
 ```
 (you can add and remove packages from install.sh, i've added what I usually need all the time).
 
@@ -25,9 +25,9 @@ torch-distro/run.sh
 #!/bin/bash
 currdir=`dirname $0`
 currdir=$(cd "$currdir" && pwd)
-export PATH=$currdir/install/bin/$PATH
-export LD_LIBRARY_PATH=$currdir/install/lib/$LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=$currdir/install/lib/$DYLD_LIBRARY_PATH
+export PATH=$currdir/install/bin/:$PATH
+export LD_LIBRARY_PATH=$currdir/install/lib/:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$currdir/install/lib/:$DYLD_LIBRARY_PATH
 $currdir/install/bin/luajit myscripts/main.lua $*
 ```
 
