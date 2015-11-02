@@ -5,8 +5,8 @@ A page describing how to ship torch binaries without sharing the source code of 
 
 1) Create a self-contained torch install: 
 ```bash
-git clone https://github.com/soumith/torch-distro.git
-cd torch-distro
+git clone https://github.com/torch/distro.git torch
+cd torch
 ./install.sh
 ```
 (you can add and remove packages from install.sh, i've added what I usually need all the time).
@@ -17,10 +17,10 @@ luajit -b [script.lua] [script.out]
 ```
 More doc here: http://luajit.org/running.html
 
-3) Place the byte-code scripts in torch-distro/myscripts
+3) Place the byte-code scripts in torch/myscripts
 
-4) Create a shell script in the root of torch-distro that sets the proper environment for your end-user, and passes the commandline options into your main lua script: 
-torch-distro/run.sh
+4) Create a shell script in the root of torch that sets the proper environment for your end-user, and passes the commandline options into your main lua script: 
+torch/run.sh
 ```bash
 #!/bin/bash
 currdir=`dirname $0`
